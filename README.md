@@ -1,5 +1,3 @@
-# old context menu restore guide
-
 ## restoring the old menu
 
 ```powershell
