@@ -1,2 +1,23 @@
-# windows-context-menu
-this is how do restore the old windows context menu
+# old context menu restore guide
+
+## restoring the old menu
+
+```powershell
+# add registry edit
+reg.exe add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+
+# restart the explorer process
+taskkill /f /im explorer.exe # kill process
+start explorer.exe # restart process
+```
+
+## restoring the new menu
+
+```powershell
+# remove registry edit
+reg.exe delete "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}" /f
+
+# restart the explorer process
+taskkill /f /im explorer.exe # kill process
+start explorer.exe # restart process
+```
